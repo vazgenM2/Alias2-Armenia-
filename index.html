@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="start-part">
+        <h1>ALIAS  2</h1>
+        <button class="start">Սկսել խաղը</button>
+    </div>
+    
+    <div class="choose-team">
+        <label for="team1">Թիմ 1</label>
+        <input type="text" placeholder="Ներմուծել անուն" class="inp-team1-value">
+        <label for="team2">Թիմ 2</label>
+        <input type="text" placeholder="Ներմուծել անուն" class="inp-team2-value">
+        <br>
+        <label for="team2">Միավորների թիվը</label>
+        <input type="number" placeholder="Ներմուծել միավորների թիվը" value="100" class="values">
+        <label for="team2">Ժամանակը (վրկ)</label>
+        <input type="number" placeholder="Ներմուծել 1 ռաունդի ժամանակահատվածը" value="60" class="game-time">
+        <br>
+        <button class="go-to-game">Առաջ</button>
+    </div>
+
+    <div class="game-table">
+        <div>
+            <span>Այժմ</span> <span class="what-team"></span> <span>-ի հերթն է</span>
+            <hr>
+        </div>
+        <br>
+        <button class="in-game-table-btn">Սկսել</button>
+        <br><br>
+        <div style="background-color: #44a; padding: 10px;">
+            <h5>Ընդհանուր հաշիվ</h5>
+            <span class="team1"></span> <span>`  </span> <span class="team1-value"></span> <span> միավոր</span>
+            <br>
+            <span class="team2"></span> <span>`  </span> <span class="team2-value"></span> <span> միավոր</span>
+        </div>
+    </div>
+
+    <div class="alias">
+        <div class="timer">60</div>
+        <div>
+            <p class="word">Vazgen</p>
+            <hr>
+        </div>
+        <br>
+        <div class="true-false">
+            <div class="true">Ճիշտ</div>
+            <div class="false">Սխալ</div>
+        </div>
+    </div>
+
+
+    <script src="code.js"></script>
+</body>
+</html>
