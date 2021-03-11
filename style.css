@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Paytone One', sans-serif;    
     box-sizing: border-box;
-    background: url('./img/bg.jpg') top center;
+    background: url('./bg.jpg') top center;
     background-size: cover;
 }
 .start-part {
