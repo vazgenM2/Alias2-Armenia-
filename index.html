@@ -15,6 +15,8 @@
     </div>
     
     <div class="choose-team">
+        <span class="error" style="margin: 5px;background: rgb(255,0,0,0.5);padding: 5px;
+        display: none;position: absolute;right: 0;top: 0;">Կա ինչ որ պնդիր</span>
         <label for="team1">Թիմ 1</label>
         <input type="text" placeholder="Ներմուծել անուն" class="inp-team1-value">
         <label for="team2">Թիմ 2</label>
@@ -22,8 +24,10 @@
         <br>
         <label for="team2">Միավորների թիվը</label>
         <input type="number" placeholder="Ներմուծել միավորների թիվը" value="100" class="values">
-        <label for="team2">Ժամանակը (վրկ)</label>
+        <small style="text-align: right;">10 - 200 Միավոր</small>
+        <label for="team2">Ժամանակը ( վրկ )</label>
         <input type="number" placeholder="Ներմուծել 1 ռաունդի ժամանակահատվածը" value="60" class="game-time">
+        <small style="text-align: right;">20 - 120 վրկ</small>
         <br>
         <div class="game-modes">
             <button class="go-to-game r1">Դասական</button>

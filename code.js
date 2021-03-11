@@ -14,8 +14,8 @@ const gameValue = document.querySelector('.values')
 const startGameBtn = document.querySelector('.in-game-table-btn')
 
 const timer = document.querySelectorAll('.timer')
-const trueAnswer = document.querySelector('.true')
-const falseAnswer = document.querySelector('.false')
+const trueAnswer = document.querySelector('.true-btn')
+const falseAnswer = document.querySelector('.false-btn')
 const word = document.querySelector('.word')
 const r1Words = document.querySelectorAll('.word-r1')
 
@@ -117,6 +117,10 @@ startBtn.addEventListener('click',function() {
 
 for(let i = 0; i < toGameTableBtn.length; i++ ) {
     toGameTableBtn[i].addEventListener('click',function() {
+        if(inpT1Value.value && inpT2Value.value && gameValue.value >= 10 && gameValue.value <= 200 && 
+            gameTime.value >= 20 && gameTime.value <= 120 ) {
+        
+        document.querySelector('.error').style.display = 'none'
         document.querySelector('.game-table').style.display = 'flex'
         document.querySelector('.choose-team').style.display = 'none'
         nowTeam = [inpT1Value.value,inpT2Value.value]
@@ -127,9 +131,13 @@ for(let i = 0; i < toGameTableBtn.length; i++ ) {
         
         t1_value.innerHTML = t1_count
         t2_value.innerHTML = t2_count
-
+        
         if(this.classList.contains('r1')) startGameBtn.classList.add('r1')
         else if(this.classList.contains('r2')) startGameBtn.classList.add('r2')
+        }
+        else {
+            document.querySelector('.error').style.display = 'block'
+        }
     })
 }
     
