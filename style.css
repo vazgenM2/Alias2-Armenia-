@@ -44,7 +44,7 @@ body {
 /* ========================================================== */
 .choose-team {
     color: white;
-    position: relative;
+    position: absolute;
     max-width: 600px;
     height: auto;
     border-radius: 10px;
@@ -102,6 +102,7 @@ body {
     background: #55a;
     border: 3px solid #44a;
     min-width: 90%;
+    height: auto;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -240,6 +241,6 @@ body {
         transform: translateY(-50%);
     }
     100% {
-        transform: translateY(170%);
+        transform: translateY(215%);
     }
 }
