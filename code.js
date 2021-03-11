@@ -1,6 +1,6 @@
 // =========================================================== ELements
 const startBtn = document.querySelector('.start')
-const toGameTableBtn = document.querySelector('.go-to-game')
+const toGameTableBtn = document.querySelectorAll('.go-to-game')
 const whatTeam = document.querySelector('.what-team')
 const t1 = document.querySelector('.team1')
 const t2 = document.querySelector('.team2')
@@ -13,10 +13,14 @@ const gameTime = document.querySelector('.game-time')
 const gameValue = document.querySelector('.values')
 const startGameBtn = document.querySelector('.in-game-table-btn')
 
-const timer = document.querySelector('.timer')
+const timer = document.querySelectorAll('.timer')
 const trueAnswer = document.querySelector('.true')
 const falseAnswer = document.querySelector('.false')
 const word = document.querySelector('.word')
+const r1Words = document.querySelectorAll('.word-r1')
+
+const winMess = document.querySelector('.win-mess')
+const winner = document.querySelector('.winner')
 
 
 
@@ -111,36 +115,87 @@ startBtn.addEventListener('click',function() {
     document.querySelector('.choose-team').style.display = 'flex'
 })
 
+for(let i = 0; i < toGameTableBtn.length; i++ ) {
+    toGameTableBtn[i].addEventListener('click',function() {
+        document.querySelector('.game-table').style.display = 'flex'
+        document.querySelector('.choose-team').style.display = 'none'
+        nowTeam = [inpT1Value.value,inpT2Value.value]
+        
+        whatTeam.innerHTML = nowTeam[currentTeam]
+        t1.innerHTML = inpT1Value.value
+        t2.innerHTML = inpT2Value.value
+        
+        t1_value.innerHTML = t1_count
+        t2_value.innerHTML = t2_count
 
-toGameTableBtn.addEventListener('click',function() {
-    document.querySelector('.game-table').style.display = 'flex'
-    document.querySelector('.choose-team').style.display = 'none'
-    nowTeam = [inpT1Value.value,inpT2Value.value]
+        if(this.classList.contains('r1')) startGameBtn.classList.add('r1')
+        else if(this.classList.contains('r2')) startGameBtn.classList.add('r2')
+    })
+}
+    
 
-    whatTeam.innerHTML = nowTeam[currentTeam]
-    t1.innerHTML = inpT1Value.value
-    t2.innerHTML = inpT2Value.value
-
-    t1_value.innerHTML = t1_count
-    t2_value.innerHTML = t2_count
-})
 
 startGameBtn.addEventListener('click',function() {
-    document.querySelector('.alias').style.display = 'flex'
-    document.querySelector('.game-table').style.display = 'none'
-    timer.innerHTML = gameTime.value
-    randomThem = Math.floor(Math.random()*thems.length)
-    randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
-    word.innerHTML = words[thems[randomThem]][randomNum]
+    if(this.classList.contains('r1')) {
+        document.querySelector('.alias2').style.display = 'flex'
+        document.querySelector('.game-table').style.display = 'none'
+        timer[0].innerHTML = gameTime.value
+        newWords()
+            
+        let gameTimer = setInterval(()=>{
+            if(Number(timer[0].innerHTML) > 0) timer[0].innerHTML = Number(timer[0].innerHTML) - 1
+            else {
+                clearInterval(gameTimer)
+                endGame()
+            }
+        },1000)
+    }
+    if(this.classList.contains('r2')) {
+        document.querySelector('.alias').style.display = 'flex'
+        document.querySelector('.game-table').style.display = 'none'
+        timer[1].innerHTML = gameTime.value
+        randomThem = Math.floor(Math.random()*thems.length)
+        randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+        word.innerHTML = words[thems[randomThem]][randomNum]
 
-    let gameTimer = setInterval(()=>{
-        if(Number(timer.innerHTML) > 0) timer.innerHTML = Number(timer.innerHTML) - 1
-        else {
-            clearInterval(gameTimer)
-            endGame()
-        }
-    },1000)
+        let gameTimer = setInterval(()=>{
+            if(Number(timer[1].innerHTML) > 0) timer[1].innerHTML = Number(timer[1].innerHTML) - 1
+            else {
+                clearInterval(gameTimer)
+                endGame()
+            }
+        },1000)
+    }
+
+
 })
+function newWords() {
+    for(let i = 0; i < r1Words.length; i++) {
+        r1Words[i].classList.remove('true')
+        randomThem = Math.floor(Math.random()*thems.length)
+        randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+        r1Words[i].innerHTML = words[thems[randomThem]][randomNum]    
+    }
+}
+for(let i = 0; i < r1Words.length; i++) {
+    r1Words[i].addEventListener('click', function() {
+        this.classList.toggle('true')
+        if(currentTeam == 0) {
+            if(this.classList.contains('true')) t1_count++
+            else t1_count--
+            console.log(t1_count,t2_count)
+        }
+        else if(currentTeam == 1) {
+            if(this.classList.contains('true')) t2_count++
+            else t2_count--
+            console.log(t1_count,t2_count) 
+        }
+        for(let j = 0; j < r1Words.length; j++) {
+            if(!r1Words[j].classList.contains('true')) return false
+        }
+        newWords()
+    })
+}
 
 trueAnswer.addEventListener('click',function() {
     randomThem = Math.floor(Math.random()*thems.length)
@@ -161,10 +216,22 @@ falseAnswer.addEventListener('click',function() {
 function endGame() {
     document.querySelector('.game-table').style.display = 'flex'
     document.querySelector('.alias').style.display = 'none'   
+    document.querySelector('.alias2').style.display = 'none'   
     
     t1_value.innerHTML = t1_count
     t2_value.innerHTML = t2_count
 
+    if(t1_count >= gameValue.value || t2_count >= gameValue.value) {
+        if(currentTeam == 0) winner.innerHTML = inpT1Value.value
+        else if(currentTeam == 1) winner.innerHTML = inpT2Value.value
+
+        winMess.style.display = 'block'
+        winMess.style.animation = 'wining 1s ease-out  forwards'
+    } 
+
     if(currentTeam == 0) currentTeam = 1
     else currentTeam = 0
+
+    whatTeam.innerHTML = nowTeam[currentTeam]
+
 }

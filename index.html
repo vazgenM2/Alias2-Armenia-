@@ -25,7 +25,10 @@
         <label for="team2">Ժամանակը (վրկ)</label>
         <input type="number" placeholder="Ներմուծել 1 ռաունդի ժամանակահատվածը" value="60" class="game-time">
         <br>
-        <button class="go-to-game">Առաջ</button>
+        <div class="game-modes">
+            <button class="go-to-game r1">Դասական</button>
+            <button class="go-to-game r2">Արկադային</button>
+        </div>
     </div>
 
     <div class="game-table">
@@ -36,7 +39,7 @@
         <br>
         <button class="in-game-table-btn">Սկսել</button>
         <br><br>
-        <div style="background-color: #66a; padding: 10px;">
+        <div style="background-color: #66a; padding: 10px;border-radius: 10px;">
             <h5>Ընդհանուր հաշիվ</h5>
             <span class="team1"></span> <span>`  </span> <span class="team1-value"></span> <span> միավոր</span>
             <br>
@@ -44,19 +47,36 @@
         </div>
     </div>
 
-    <div class="alias">
-        <div class="timer">60</div>
+    <div class="alias2">
+        <div class="timer">60</div> 
         <div>
+            <hr>
+            <p class="word-r1">---------</p>
+            <p class="word-r1">---------</p>
+            <p class="word-r1">---------</p>
+            <p class="word-r1">---------</p>
+            <p class="word-r1">---------</p>
+            <hr>
+        </div>
+        <br>
+    </div>
+
+
+    <div class="alias">
+        <div class="timer">60</div> 
+        <div>
+            <hr>
             <p class="word">---------</p>
             <hr>
         </div>
         <br>
         <div class="true-false">
-            <div class="true">Ճիշտ</div>
-            <div class="false">Սխալ</div>
+            <div class="true-btn">Ճիշտ</div>
+            <div class="false-btn">Սխալ</div>
         </div>
     </div>
 
+    <h2 class="win-mess">Հաղթեց` <span class="winner"></span>-ն</h2>
 
     <script src="code.js"></script>
 </body>
