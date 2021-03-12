@@ -1,6 +1,7 @@
 // =========================================================== ELements
 const startBtn = document.querySelector('.start')
-const toGameTableBtn = document.querySelectorAll('.go-to-game')
+const toGameTableBtn = document.querySelector('.go-to-game')
+const toThemsBtn = document.querySelectorAll('.go-to-them')
 const whatTeam = document.querySelector('.what-team')
 const t1 = document.querySelector('.team1')
 const t2 = document.querySelector('.team2')
@@ -22,6 +23,7 @@ const r1Words = document.querySelectorAll('.word-r1')
 const winMess = document.querySelector('.win-mess')
 const winner = document.querySelector('.winner')
 
+const someThem = document.querySelectorAll('.some-them')
 
 
 // =========================================================== Variables
@@ -33,7 +35,19 @@ let words = {}
 
 // =========================================================== Workds
 words = {
-    // names: ['Հովհաննես Թումանյան'],
+    names: ['Հովհաննես Թումանյան','Գեւորգ Էմին','Ակսել Բակունց','Վահան Տերյան','Նաիրի Զարյան','Րաֆֆի','Պերճ Պռոշյան','Սահակ Պարթեւ',
+    'Դերենիկ Դեմիրճյան','Հովհաննես Շիրազ','Նար Դոս','Ռուբեն Սեւակ','Լեւոն Շանթ','Խնկո Ապեր','Գուրգեն Մահարի','Միսակ Մեծարենց',
+    'Սիամանթո','Մուրացան','Դանիել Վարուժան','Պետրոս Դուրյան','Սայաթ-Նովա','Եղիշե Չարենց','Շիրվանզադե','Պարույր Սեւակ','Խաչատուր Աբովյան',
+    'Ավետիկ Իսահակյան','Ստեփան Զորյան','Արտաշես Ա Բարի','Սարդուրի Ա','Իշուինի','Արգիշտի Ա','Տիգրան Բ Մեծ','Արտավազդ Ա','Տրդատ Ա',
+    'Խոսրով Գ Կոտակ','Տրդատ Գ Մեծ','Պապ թագավոր','Վռամշապուհ թագավոր','Աշոտ Ա','Աշոտ Երկաթ','Աշոտ Գ Ողորմած','Սմբատ Բ Տիեզերակալ',
+    'Գագիկ Ա Շահնաշահ','Արամ mp3','Միհրան Ծառուկյան','Արփի Գաբրիելյան','Գոռ Հակոբյան','Բեն Ավետիսյան','Գրիգոր Դանիելյան','Գոռ Եփրեմյան',
+    'Անդրե','Անդրանիկ Օզանյան','Անի Երանյան','Արկադի Դումիկյան','Բիլ Գեյթս','Լեո Մեսսի','Ռոնալդու','Պելե','Մառադոննա','Ռոբերտ Լեվանդովսկի',
+    'Ռոնալդինյո','Նիկոլ Փաշինյան','Սերժ Սարգսյան','Ռոբերտ Քոչարյան','Վլադիմիռ Պուտին','Դոնալդ Թռամպ','Ջորջ Վաշինգթոն','Նապոլեոն Բոնապարտ',
+    'Ստալին','Վանգա','Նաստրադամուս','Ալբերտ Էնշտեյն','Նյուտոն','Չարլզ Դարվին','Չառլի Չապլին','Քրիստինա Եղոյան','Վահե Զիրոյան','Կարեն Ասլանյան',
+    'Լիլի Մորտո','Գարիկ Պապոյան','Գրիգ Գեւորգյան','Սոնա Ռուբինյան','Լուիզա Ներսիսյան','Լեբռոն Ջեյմս','Կոբի Բռեյնտ','Ռաֆայել Երանոսյան',
+    'Քիմ Քարդաշյան','Գագիկ Ծառուկյան','Գալուստ Սահակյան','Լեոնարդո Դիկաբրիո','Սթիվ Թփիլբերգ','Հովհաննես Ադամյան','Դմիտրի Մենդելեեւ',
+    'Արիստոտել','Դավիթ Անհաղթ','Սասունցի Դավիթ','Մսրա Մելիք','Մեսրոպ Մաշտոց','Գրիգոր Լուսավորիչ','Եղիշե պատմիչ','Ագաթանգեղոս','Փավստոս Բյուզանդ',
+    'Վիլյամ Սարոյան','Պյոտր Ա','Հիտլեռ',],
     items: ['աթոռ','սեղան','պահարան','ծաղկաման','բազկաթոռ','բազմոց','մահճակալ','լուսամփոփ','աստիճան','գիրք','տետր','մատիտ',
     'կազմ','սրիչ','ծաղիկ','մոխրաման','ծխախոտ','ձեռք','մատ','շախմատ','շաշկի','մազ','վարս','նկար','պատկեր','տուփ','արկղ',
     'անձեռոցիկ','ծունկ','ոտք','կոճակ','զգես','տաբատ','կոշիկ','հող','աչք','հոնք','ճակատ','շրթունք','քիթ','ականջ','հիմք','արմատ',
@@ -154,13 +168,17 @@ words = {
     'Սերխիո Ռեգիլոն','Տօբի Ալդերվեյրելդ','Էրիկ Դայեռ','Սերժ Օրյե','Խյոբեռգ','Մուսա Սիսսոկո','Դելլե Ալլի','Նդոմբելե','Խյո Մին Սոն','Հարի Քեյն',
     'Էրիկ Լամելա','Լուկաս Մոուռա','Ջեկ Գրիլիշ','Վոտկինս','Ռոս Բառկլի','Միկել Արտետա','Բեռնտ Լենո','Բելլերին','Դավիդ Լուիզ','Բուկայո Սակա',
     'Գրանիտ Ջակա','Ալեքսանդր Լակազետ','Վիլլիան','Օբամեյանգ','Նիկոլաս Պեպե','Գաբրիել Մարտինելլի','Մարսելո Բյելսա','Ադամա Տռաոռե',
-    'Նելսոն Սեմեդու','Ժոաու Մոուտինյո','Ռաուլ Խիմենեզ',],
+    'Նելսոն Սեմեդու','Ժոաու Մոուտինյո','Ռաուլ Խիմենեզ','Պելե','Ռոնալդո','Ռոնալդինյո','Գարինչա','Կակա','Իկեր Կասիլյաս','Կռոյֆ','Լեվ Յաշին',
+    'Պաուլո Մալդինի','Նեստա','Պուշկաշ','Վան Բաստեն','Տիերի Անրի','Ռուտ Գուլիտ','Կանտոնա','Ջորջ Բեսթ','Էսեյբիո','Չավի','Ինիեստա','Դալգլիշ',
+    'Կասպեռ Շմեյխել','Պետեր Շմեյխել','Զանետտի','Լուիշ Ֆիգու','Ռիվալդո','Էդոո','Դել Պիեռո','Վիկտոր Վալդես','Գիգս','Ռաուլ','Վիեիռա',
+    'Ֆեռնանդո Տոռես','Մայքլ Օվեն','Պավել Նեդվիդ','Պետր Չեխ','Շվայշտայգեռ','Բալլակ','Ռոբերտո Կառլոս','Ֆիլիպ Լահմ','Դիդյե Դռոգբա',
+    'Պոլ Սքոլս','Անդրեյ Շեվչենկո','Վիդիչ','Ռիո Ֆերդինանդ','Ռայկարդ','Մարզիչ','Մեկնաբան','գնդակ','խոտածածկ','ստադիոն','դիմային գիծ',
+    'եզրային գիծ','տրիբունա','դարպաս','հարվածել','դիպուկ','խաղից դուրս','խախտում','տուգանային հարված','11 մետրանոց','տուգանային հրապարակ',
+    'սիմուլացիա','շրջադարձ հարված','կարիճ հարված','ՎԱՌ համակարգ','կրկնապատկեր','չեղարկում','ազատ հարված',],
     // random: [],
 }
 
-let thems = Object.keys(words)
-let randomThem = Math.floor(Math.random()*thems.length) 
-let randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+let thems = []
 
 // =========================================================== Functions
 
@@ -169,22 +187,14 @@ startBtn.addEventListener('click',function() {
     document.querySelector('.choose-team').style.display = 'flex'
 })
 
-for(let i = 0; i < toGameTableBtn.length; i++ ) {
-    toGameTableBtn[i].addEventListener('click',function() {
+for(let i = 0; i < toThemsBtn.length; i++ ) {
+    toThemsBtn[i].addEventListener('click',function() {
         if(inpT1Value.value && inpT2Value.value && gameValue.value >= 10 && gameValue.value <= 200 && 
             gameTime.value >= 20 && gameTime.value <= 120 ) {
         
         document.querySelector('.error').style.display = 'none'
-        document.querySelector('.game-table').style.display = 'flex'
+        document.querySelector('.thems').style.display = 'flex'
         document.querySelector('.choose-team').style.display = 'none'
-        nowTeam = [inpT1Value.value,inpT2Value.value]
-        
-        whatTeam.innerHTML = nowTeam[currentTeam]
-        t1.innerHTML = inpT1Value.value
-        t2.innerHTML = inpT2Value.value
-        
-        t1_value.innerHTML = t1_count
-        t2_value.innerHTML = t2_count
         
         if(this.classList.contains('r1')) startGameBtn.classList.add('r1')
         else if(this.classList.contains('r2')) startGameBtn.classList.add('r2')
@@ -194,8 +204,35 @@ for(let i = 0; i < toGameTableBtn.length; i++ ) {
         }
     })
 }
-    
 
+toGameTableBtn.addEventListener('click',function(){
+    
+    
+    for(let i = 0; i < document.querySelectorAll('.some-them.chosen').length; i++) {
+        thems.push(document.querySelectorAll('.some-them.chosen')[i].getAttribute('data-value'))
+    }
+    
+    if(thems.length > 0) {
+        
+        nowTeam = [inpT1Value.value,inpT2Value.value]
+        document.querySelector('.thems').style.display = 'none'
+        document.querySelector('.error').style.display = 'none'
+        document.querySelector('.game-table').style.display = 'flex'
+
+        whatTeam.innerHTML = nowTeam[currentTeam]
+        t1.innerHTML = inpT1Value.value
+        t2.innerHTML = inpT2Value.value
+    
+        t1_value.innerHTML = t1_count
+        t2_value.innerHTML = t2_count
+    }
+})
+
+for(let i = 0; i < someThem.length; i++) {
+    someThem[i].addEventListener('click',function() {
+        this.classList.toggle('chosen')
+    })
+}
 
 startGameBtn.addEventListener('click',function() {
     if(this.classList.contains('r1')) {

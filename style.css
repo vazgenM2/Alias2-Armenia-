@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Paytone One', sans-serif;    
     box-sizing: border-box;
-    background: url('./bg.jpg') top center;
+    background: url('./bg.jpg') top center ;
     background-size: cover;
 }
 .start-part {
@@ -71,7 +71,7 @@ body {
     height: 40px;
     font-size: 21px;
 }
-.go-to-game {
+.go-to-game, .go-to-them {
     padding: 5px;
     margin: 3px;
     height: 50px;    
@@ -84,7 +84,7 @@ body {
     border-radius: 10px;
     transition: all ease 0.3s;
 }
-.go-to-game:hover, .go-to-game:active {
+.go-to-game:hover, .go-to-game:active, .go-to-them:hover, .go-to-them:active {
     color: #33a;
     background: white;
 }
@@ -232,6 +232,47 @@ body {
     background-color: #22a;
     animation: none;
     overflow: hidden;
+}
+/* ================================================================= */
+.thems {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    background: #55a;
+    border: 3px solid #44a;
+    color: white;
+    min-width: 90%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+.thems h3 {
+}
+.some-them {
+    margin: 10px auto;
+    width: 90%;
+    cursor: pointer;
+    height: auto;
+    letter-spacing: 3px;
+    text-decoration: underline;
+    border: 2px solid #44a;
+    padding: 10px;
+    background-color: #33a;
+    border-radius: 20px;
+}
+.some-them.chosen {
+    background-color: white;
+    color: #33a;
+    border: 2px solid white;
+}
+.some-them:last-child {
+    margin-bottom: 30px;
 }
 
 @keyframes wining {
