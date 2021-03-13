@@ -60,6 +60,8 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     display: none;
     padding: 20px;
+    margin-top: 30px;
+    overflow: scroll;
     flex-direction: column;
 }
 .choose-team label {
@@ -163,6 +165,7 @@ body {
     position: absolute;
     max-width: 500px;
     min-width: 250px;
+    margin-top: 40px;
     height: auto;
     background: #55a;
     left: 50%;
@@ -233,7 +236,6 @@ body {
     width: 100%;
     padding: 40px 0px;
     text-align: center;
-    /* transform: translateY(-20%); */
     font-size: 8vw;
     color: white;
     background-color: #22a;
@@ -250,6 +252,7 @@ body {
     border: 3px solid #44a;
     color: white;
     min-width: 90%;
+    margin-top: 15px;
     height: auto;
     position: absolute;
     left: 50%;
@@ -258,8 +261,6 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 20px;
-}
-.thems h3 {
 }
 .some-them {
     margin: 10px auto;
@@ -287,6 +288,6 @@ body {
         transform: translateY(0%);
     }
     100% {
-        /* transform: translateY(50%); */
+        transform: translateY(50%);
     }
 }
