@@ -32,6 +32,8 @@ let currentTeam = 0
 let t1_count = 0
 let t2_count = 0
 let words = {}
+let randomThem
+
 
 // =========================================================== Workds
 words = {
@@ -338,7 +340,7 @@ words = {
     'Արփա լիճ','Չարենցավան','Սիդնեյ','Էյֆելյան աշտարակ','Ազատության արձան','Չինական մեծ պատ','Թաջ Մահալ','Պիզայի աշտարակ','Բիգ Բեն',
     'հայ','վրացի','ռուս','անգլիացի','ամերիկացի','եվրոպացի','աֆրիկացի','ազգ','իսպանացի','պորտուգալացի','ֆրանսիացի','գերմանացի','իտալացի',
     'կորեացի','ճապոնացի','չինացի','բրազիլացի','ուկրաինացի','արգենտինացի','կանադացի','Հիսուս Քրիստոսի արձան','Սպիտակ տուն','շվեցարական բանկ',
-    'Ազգային ժողով','հանրապետության հրապարակ','Հոլիվուդ'],
+    'Ազգային ժողով','հանրապետության հրապարակ','Հոլիվուդ','Դսեղ'],
     dercvacq: ['ականջ գցել','աշխարհ տեսած','աչքի ընկնել','արյան ծով','բախտը ժպտալ','գլխի գցել','գլխի ընկնել','գլխին քարոզ կարդալ','գլուխ պահել',
     'երեսով տալ','երկինքը գլխին փուլ գալ','լեզուն կապ ընկնել','խելքը թրցնել','կյանքի կոչել','կրակն ընկնել','ձայնը գլուխը գցել','ոտքի տակ ընկնել','պարտքի տակ մնալ',
     'պխտոր ջրում ձուկ որսալ','պոչը կտրել','սիրտ տալ','սեւ ակնոցով նայել','վարդագույն ակնոցով նայել','քարից հաց քամել','քարը քարին չթողնել',
@@ -368,6 +370,7 @@ words = {
 // console.log(words.geography.indexOf('Դնեպր'))
 
 let thems = []
+let uniqe = []
 
 // =========================================================== Functions
 
@@ -378,9 +381,10 @@ startBtn.addEventListener('click',function() {
 
 for(let i = 0; i < toThemsBtn.length; i++ ) {
     toThemsBtn[i].addEventListener('click',function() {
-        if(inpT1Value.value && inpT2Value.value && gameValue.value >= 10 && gameValue.value <= 200 && 
-            gameTime.value >= 20 && gameTime.value <= 120 ) {
-        
+        if(gameValue.value >= 10 && gameValue.value <= 200 && gameTime.value >= 20 && gameTime.value <= 120 ) {
+        if(!inpT1Value.value) inpT1Value.value = 'Թիմ 1'
+        if(!inpT2Value.value) inpT2Value.value = 'Թիմ 2'
+
         document.querySelector('.error').style.display = 'none'
         document.querySelector('.thems').style.display = 'flex'
         document.querySelector('.choose-team').style.display = 'none'
@@ -454,17 +458,49 @@ startGameBtn.addEventListener('click',function() {
             }
         },1000)
     }
-
-
 })
+
 function newWords() {
+    randomThem = Math.floor(Math.random()*thems.length)
+    randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
     for(let i = 0; i < r1Words.length; i++) {
-        r1Words[i].classList.remove('true')
-        randomThem = Math.floor(Math.random()*thems.length)
-        randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
-        r1Words[i].innerHTML = words[thems[randomThem]][randomNum]    
+        if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+            r1Words[i].classList.remove('true')
+            r1Words[i].innerHTML = words[thems[randomThem]][randomNum]    
+            uniqe.push(words[thems[randomThem]][randomNum])
+            randomThem = Math.floor(Math.random()*thems.length)
+            randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+        }
+        else {
+            randomThem = Math.floor(Math.random()*thems.length)
+            randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+            if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+                r1Words[i].classList.remove('true')
+                r1Words[i].innerHTML = words[thems[randomThem]][randomNum]
+                randomThem = Math.floor(Math.random()*thems.length)
+                randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+            }
+            else {
+                randomThem = Math.floor(Math.random()*thems.length)
+                randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+                if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+                    r1Words[i].classList.remove('true')
+                    r1Words[i].innerHTML = words[thems[randomThem]][randomNum]    
+                    randomThem = Math.floor(Math.random()*thems.length)
+                    randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+                }
+                else {
+                    randomThem = Math.floor(Math.random()*thems.length)
+                    randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+                    r1Words[i].classList.remove('true')
+                    r1Words[i].innerHTML = words[thems[randomThem]][randomNum]    
+                }   
+            }                  
+        }
     }
+    console.log(uniqe)
 }
+
 for(let i = 0; i < r1Words.length; i++) {
     r1Words[i].addEventListener('click', function() {
         this.classList.toggle('true')
