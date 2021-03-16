@@ -446,9 +446,34 @@ startGameBtn.addEventListener('click',function() {
         document.querySelector('.alias').style.display = 'flex'
         document.querySelector('.game-table').style.display = 'none'
         timer[1].innerHTML = gameTime.value
+
         randomThem = Math.floor(Math.random()*thems.length)
         randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
-        word.innerHTML = words[thems[randomThem]][randomNum]
+        if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+            word.innerHTML = words[thems[randomThem]][randomNum]
+            uniqe.push(words[thems[randomThem]][randomNum])
+        }
+        else {
+            randomThem = Math.floor(Math.random()*thems.length)
+            randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+            if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+                word.innerHTML = words[thems[randomThem]][randomNum]
+                uniqe.push(words[thems[randomThem]][randomNum])
+            }
+            else {
+                randomThem = Math.floor(Math.random()*thems.length)
+                randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+                if(!uniqe.includes(words[thems[randomThem]][randomNum])) {
+                    word.innerHTML = words[thems[randomThem]][randomNum]
+                    uniqe.push(words[thems[randomThem]][randomNum])
+                }
+                else {
+                    randomThem = Math.floor(Math.random()*thems.length)
+                    randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
+                    word.innerHTML = words[thems[randomThem]][randomNum]        
+                }       
+            }        
+        }
 
         let gameTimer = setInterval(()=>{
             if(Number(timer[1].innerHTML) > 0) timer[1].innerHTML = Number(timer[1].innerHTML) - 1
@@ -498,7 +523,6 @@ function newWords() {
             }                  
         }
     }
-    console.log(uniqe)
 }
 
 for(let i = 0; i < r1Words.length; i++) {
