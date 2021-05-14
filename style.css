@@ -4,8 +4,7 @@ body {
     padding: 0;
     font-family: 'Paytone One', sans-serif;    
     box-sizing: border-box;
-    background: url('./bg.jpg') top center ;
-    background-size: cover;
+    background: url('./bg.png') top center;
 }
 .start-part {
     left: 50%;
