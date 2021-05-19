@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Paytone One', sans-serif;    
+    font-family: 'Reggae One', cursive;
     box-sizing: border-box;
-    background: url('./bg.png') top center;
+    /* background: #111; */
+}
+.game {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg,rgb(28, 28, 150), rgb(103, 49, 179));
+}
+.byme {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    white-space: nowrap;
+    transform: translateX(-50%);
 }
 .start-part {
     left: 50%;
@@ -18,11 +31,11 @@ body {
     flex-direction: column;
 }
 .start-part h1 {
-    -webkit-text-stroke: 2px #22a;
+    /* -webkit-text-stroke: 2px #22a; */
     color: white;
     white-space: nowrap;
     text-shadow: 7px 7px 0px #11a;
-    font-size: 80px;
+    font-size: 70px;
 }
 .start {
     font-weight: bold;
@@ -30,8 +43,8 @@ body {
     max-width: 350px;
     height: 150px;
     font-size: 34px;
-    background: #33a;
-    border: 5px solid #22a;
+    background: linear-gradient(45deg, #22a, rgb(104, 68, 187));
+    border: 5px solid #11a;
     color: white;
     outline: none;
     cursor: pointer;
@@ -49,10 +62,11 @@ body {
     position: absolute;
     max-width: 600px;
     min-width: 250px;
+    max-height: 80vh;
     height: auto;
     border-radius: 10px;
-    background: #55a;
-    border: 5px solid #44a;
+    background: linear-gradient(45deg, #55a, rgb(115, 85, 170));
+    border: 5px solid #11a;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -106,11 +120,12 @@ body {
     display: none;
     justify-content: center;
     flex-direction: column;
-    background: #55a;
-    border: 3px solid #44a;
+    /* background: #55a; */
+    background: linear-gradient(45deg, #55a, rgb(115, 85, 170));
+    border: 3px solid #11a;
     max-width: 600px;
     min-width: 250px;
-    height: auto;
+    min-height: auto;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -139,7 +154,19 @@ body {
     color: white;
     font-size: 20px;
 }
-
+.points {
+    width: 100%;
+    background-color: #33a;
+    border-top: 1px solid #11a;
+    border-bottom: 1px solid #11a;
+    padding: 20px;
+    margin-left: -20px;
+    /* border-radius: 10px; */
+}
+.toppoint {
+    margin-top: 20px;
+    font-style: italic;
+}
 /* ===================================================================== */
 .alias {
     color: white;
@@ -163,8 +190,8 @@ body {
     position: absolute;
     max-width: 500px;
     min-width: 250px;
-    margin-top: 40px;
-    height: auto;
+    margin-top: 10px;
+    max-height: 80vh;
     background: #55a;
     left: 50%;
     top: 50%;
@@ -245,8 +272,8 @@ body {
     display: none;
     justify-content: center;
     flex-direction: column;
-    background: #55a;
-    border: 3px solid #44a;
+    background: linear-gradient(45deg, #55a, rgb(115, 85, 170));
+    border: 3px solid #11a;
     color: white;
     min-width: 90%;
     margin-top: 15px;
@@ -258,6 +285,12 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 20px;
+}
+.choose-thems {
+    max-height: 250px;
+    overflow-y: scroll;
+    background: #44a;
+    margin-bottom: 15px;
 }
 .some-them {
     margin: 10px auto;

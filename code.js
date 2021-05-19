@@ -34,9 +34,8 @@ let t2_count = 0
 let words = {}
 let randomThem
 
-
 // =========================================================== Workds
-words = {
+words = {   
     names: ['Հովհաննես Թումանյան','Գևորգ Էմին','Ակսել Բակունց','Վահան Տերյան','Նաիրի Զարյան','Րաֆֆի','Պերճ Պռոշյան','Սահակ Պարթև',
     'Դերենիկ Դեմիրճյան','Հովհաննես Շիրազ','Նար Դոս','Ռուբեն Սևակ','Լևոն Շանթ','Խնկո Ապեր','Գուրգեն Մահարի','Միսակ Մեծարենց',
     'Սիամանթո','Մուրացան','Դանիել Վարուժան','Պետրոս Դուրյան','Սայաթ-Նովա','Եղիշե Չարենց','Շիրվանզադե','Պարույր Սևակ','Խաչատուր Աբովյան',
@@ -70,7 +69,7 @@ words = {
     'Նահապետ Քուչակ','Գրիգոր Նարեկացի','Ռափայել Պատկանյան','Պետրոս Դուրյան','Լևոն Շանթ','Հրանտ Մաթևոսյան','Էվանջեելիստա Տորիչելի',
     'Մկրտիչ Արզումանյան','Տիտոս Ցելսուս','Գարեգին Նժդեհ','Մայքլ Ջեքսոն','Նիկոլայ Բասկով','Ֆիլիպ Կիռկոռով','Քենյ Ուեսթ','Անգելա Մերկել',
     'Նիկիտա Խրուշչով','Նաիրա Զոհրաբյան','Հրանտ Թոխատյան','Ձմեռ պապ','Ձյունանուշիկ','Ջուլիա Ռոբերտս','Մարկ Տվեն','Հովհաննես Բաղրամյան',
-    '','','',],
+    'Արկադի Տեր Թադևոսյան','Աղաս Մանուկայն','Ջեֆ Բեզոս',],
     items: ['աթոռ','սեղան','պահարան','ծաղկաման','բազկաթոռ','բազմոց','մահճակալ','լուսամփոփ','աստիճան','գիրք','տետր','մատիտ',
     'կազմ','սրիչ','ծաղիկ','մոխրաման','ծխախոտ','ձեռք','մատ','շախմատ','շաշկի','մազ','վարս','նկար','պատկեր','տուփ','արկղ',
     'անձեռոցիկ','ծունկ','ոտք','կոճակ','զգեստ','տաբատ','կոշիկ','հող','աչք','հոնք','ճակատ','շրթունք','քիթ','ականջ','հիմք','արմատ',
@@ -339,7 +338,7 @@ words = {
     'Էր Ռիադ','Եմեն','Օման','Աբու Դաբի','Դուբայ','Կիպրոս','Նիկոսիա','Նորվեգիա','Օսլո','Շվեդիա','Ստոկհոլմ','Ֆինլանդիա','Հելսիննկի',
     'Վոլգոգրադ','Դոնի Ռոստով','Դանիա','Կոպենհագեն','Էստոնիա','Տալլին','Լատվիա','Լիտվա','Ռիգա','Վիլնյուս','Իռլանդիա','Դուբլին','Իսլանդիա',
     'Ռեյկյավիկ','Մեծ Բրիտանիա','Լոնդոն','Լիվեռպուլ','Մանչեստեր','Շոտլանդիա','Անգլիա','Ուելս','Բելառուս','Մինսկ','Ուկրաինա','Կիև','Լեհաստան',
-    'Վարշավա','Շեխիա','Պրահա','Սլովակիա','Սոֆիա','Ռումինիա','Բուլղարիա','Հունաստան','Աթենք','Իտալիա','Հռոմ','Թուրին','Միլան',
+    'Վարշավա','Չեխիա','Պրահա','Սլովակիա','Սոֆիա','Ռումինիա','Բուլղարիա','Հունաստան','Աթենք','Իտալիա','Հռոմ','Թուրին','Միլան',
     'Սան Մարինո','Վատիկան','Խորվաթիա','Մակեդոնիա','Գերմանիա','Բեռն','Բեռլին','Ֆրանսիա','Փարիզ','Բելգիա','Բրյուսել','Հոլանդիա',
     'Իսպանիա','Մադրիդ','Բարսելոնա','Պորտուգալիա','Լիսաբոն','Ավստրիա','Շվեցարիա','Ալժիր','Եգիպտոս','Կահիրե','7 հրաշալիք','Նիգեր',
     'Եթովպիա','կլիմա','կղզի','օգտակար հանածոներ','լանդշաֆտ','լեռ','ձոր','իջվածք','Ավստրալիա','Նոր Գվինեա','Նոր Զելանդիա','',
@@ -399,7 +398,8 @@ words = {
     'Audi','Lexus','Jeep','Cadillac','Hyundai','Jaguar','Mazda','Mustang','Nissan','Chevrolet','KIA','Mitsubishi','Suzuki','Range Rover','Firefox','Safari','Internet Explorer',
     'Youtube','Yahoo!','Wikipedia','Windows','Android','IOS','Netflix','VK','Twitch','Twitter','AliExpress','Adobe','Lego','Nokia','Coca Cola','Pepsi','Sprite','Fanta',
     'Disney','Visa','McDonalds','hp','LG','PayPal','Watsapp','Viber','TikTok','Telegram','Disney','Sony','Rakuten','Visa','Orange','Grand Candy','UCom','Jermuk Group',
-    'Vivaro','Toto gaming','Adjarabet','GAZprom']
+    'Vivaro','Toto gaming','Adjarabet','GAZprom','Orbit','Dirol','Lays','VivaCell','Multi Group','Head & Shoulders','Colgate','Blendamed','Paracetamol',"Levi's",
+    'Louis Vuitton','Fila','Lacoste','Prada','Gucci','NASA','Playstation','Nescafe','Skype','Red Bull']
 }
 
 let thems = []
@@ -449,6 +449,8 @@ toGameTableBtn.addEventListener('click',function(){
         document.querySelector('.thems').style.display = 'none'
         document.querySelector('.error').style.display = 'none'
         document.querySelector('.game-table').style.display = 'flex'
+
+        document.querySelector('.winpoint').innerHTML = gameValue.value
 
         whatTeam.innerHTML = nowTeam[currentTeam]
         t1.innerHTML = inpT1Value.value
@@ -567,12 +569,29 @@ for(let i = 0; i < r1Words.length; i++) {
     r1Words[i].addEventListener('click', function() {
         this.classList.toggle('true')
         if(currentTeam == 0) {
-            if(this.classList.contains('true')) t1_count++
-            else t1_count--
+            if(this.classList.contains('true')) {
+                t1_count++
+                let sound = new Audio('/sounds/true.mp3')
+                sound.play()
+            } 
+            else {
+                let sound = new Audio('/sounds/false.wav')
+                sound.play()
+                t1_count--
+            }
         }
         else if(currentTeam == 1) {
-            if(this.classList.contains('true')) t2_count++
-            else t2_count--
+            if(this.classList.contains('true')) {
+                t2_count++
+                let sound = new Audio('/sounds/true.mp3')
+                sound.play()
+
+            }
+            else {
+                let sound = new Audio('/sounds/false.wav')
+                sound.play()
+                t2_count--
+            }
         }
         for(let j = 0; j < r1Words.length; j++) {
             if(!r1Words[j].classList.contains('true')) return false
@@ -582,17 +601,21 @@ for(let i = 0; i < r1Words.length; i++) {
 }
 
 trueAnswer.addEventListener('click',function() {
+    let sound = new Audio('/sounds/true.mp3')
     randomThem = Math.floor(Math.random()*thems.length)
     randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
     word.innerHTML = words[thems[randomThem]][randomNum]
+    sound.play()
     if(currentTeam == 0) t1_count++
     else t2_count++ 
 })
 
 falseAnswer.addEventListener('click',function() {
+    let sound = new Audio('/sounds/false.wav')
     randomThem = Math.floor(Math.random()*thems.length)
     randomNum = Math.floor(Math.random()*words[thems[randomThem]].length)
     word.innerHTML = words[thems[randomThem]][randomNum]
+    sound.play()
     if(currentTeam == 0) t1_count--
     else t2_count-- 
 })

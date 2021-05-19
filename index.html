@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>VOMS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="game">
+        <small class="byme">Created by Vazgen Manaseryan</small>
 
     <div class="start-part">
-        <h1>VALIAM</h1>
+        <h1>VOMS</h1>
         <button class="start">Սկսել խաղը</button>
     </div>
     
@@ -37,7 +39,7 @@
 
     <div class="thems">
         <div class="top">
-            <h3>Ընդրիր թեմաները</h3>
+            <h3>Ընտրիր թեմաները</h3>
             <small>Առնվազն մեկը</small>
             <hr>
             <br>
@@ -56,17 +58,20 @@
 
     <div class="game-table">
         <div>
-            <span>Այժմ</span> <span class="what-team"></span> <span>-ի հերթն է</span>
+            <span>Այժմ</span> <b> <span class="what-team"></span> </b> <span>-ի հերթն է</span>
             <hr>
         </div>
         <br>
         <button class="in-game-table-btn">Սկսել</button>
         <br><br>
-        <div style="background-color: #66a; padding: 10px;border-radius: 10px;">
+        <div class="points">
             <h5>Ընդհանուր հաշիվ</h5>
             <span class="team1"></span> <span>`  </span> <span class="team1-value"></span> <span> միավոր</span>
             <br>
             <span class="team2"></span> <span>`  </span> <span class="team2-value"></span> <span> միավոր</span>
+        </div>
+        <div class="toppoint">
+            <span>Պետք է հասնել <span class="winpoint"></span> միավորի</span>
         </div>
     </div>
 
@@ -102,5 +107,7 @@
     <h2 class="win-mess">Հաղթեց` <span class="winner"></span>-ն</h2>
 
     <script src="code.js"></script>
+    
+    </div>
 </body>
 </html>
