@@ -1,2 +1,2 @@
-# Valiam - guess the words
-[This is multiplayer game](https://vazgenm2.github.io/VOMS/)
+# VOMS - guess the words
+[Game's Link](https://vazgenm2.github.io/VOMS/)
